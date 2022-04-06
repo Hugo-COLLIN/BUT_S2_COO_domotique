@@ -15,6 +15,10 @@ public class Lampe {
         this.allume = false;
     }
 
+    public boolean isAllume(){
+        return this.allume;
+    }
+
     public String toString(){
         String msg = this.nom + " est ";
         if (this.allume)

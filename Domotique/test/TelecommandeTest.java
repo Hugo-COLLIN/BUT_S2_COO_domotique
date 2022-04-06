@@ -35,6 +35,10 @@ class TelecommandeTest {
         
     }
 
+    /**
+     * Test de la methode activerLampe
+     * a la position 0 de la liste
+     */
     @Test
     void activerLampe_pos0() {
         // Initialisation des valeurs
@@ -49,6 +53,10 @@ class TelecommandeTest {
         assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");
     }
 
+    /**
+     * Test de la methode activerLampe
+     * a la position 1 de la liste
+     */
     @Test
     void activerLampe_pos1() {
         // Initialisation des valeurs

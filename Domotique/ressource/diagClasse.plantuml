@@ -1,5 +1,5 @@
 @startuml
-Class Lampe{
+class Lampe{
     - nom : String
     - allume : boolean
     + Lampe(String nom)

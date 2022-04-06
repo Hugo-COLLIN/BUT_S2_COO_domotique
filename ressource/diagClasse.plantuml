@@ -1,0 +1,22 @@
+@startuml
+Class Lampe{
+    - nom : String
+    - allume : boolean
+    + Lampe(String nom)
+    + allumer()
+    + eteindre()
+    + toString()
+
+}
+
+class Telecommande{
+    + Telecommande()
+    + ajouterLampe(Lampe lampe)
+    + activerLampe(int indexLampe)
+    + desactiverLampe(int indexLampe)
+    + activerTout()
+    + toString()
+}
+
+Telecommande -> "*" Lampe : -lampes
+@enduml

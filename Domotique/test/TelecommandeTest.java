@@ -15,11 +15,26 @@ class TelecommandeTest {
     void activerLampe_pos0() {
         // Initialisation des valeurs
         Telecommande t = new Telecommande();
-        Lampe p = new Lampe("Lampe1");
+        Lampe p = new Lampe("LampeTest");
         t.ajouterLampe(p);
 
         // Appel de la methode
         t.activerLampe(0);
+
+        // Test si la valeur a bien ete changer
+        assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");
+    }
+
+    @Test
+    void activerLampe_pos1() {
+        // Initialisation des valeurs
+        Telecommande t = new Telecommande();
+        Lampe p = new Lampe("LampeTest");
+        t.ajouterLampe(new Lampe("LampeUseless"));
+        t.ajouterLampe(p);
+
+        // Appel de la methode
+        t.activerLampe(1);
 
         // Test si la valeur a bien ete changer
         assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");

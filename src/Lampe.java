@@ -19,12 +19,13 @@ public class Lampe {
         return this.allume;
     }
 
-    public String toString(){
-        String msg = this.nom + " est ";
-        if (this.allume)
-            msg += "allumee";
-        else
-            msg += "eteinte";
-        return msg;
+    public String toString() {
+        String r = "";
+        if (this.allume) {
+            r = "On";
+        } else {
+            r = "Off";
+        }
+        return (nom + ": " + r);
     }
 }

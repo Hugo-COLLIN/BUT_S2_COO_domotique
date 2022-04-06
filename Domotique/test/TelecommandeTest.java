@@ -1,18 +1,44 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class TelecommandeTest {
 
-    @Test
-    void test_ajouterLampe_constructeurVide()
+    //Atributes
+    Telecommande telecommande;
+
+
+    //Methods
+    @BeforeEach
+    void preparation ()
     {
-        Telecommande t = new Telecommande();
-        assertEquals();
+        telecommande = new Telecommande();
     }
 
     @Test
-    void activerLampe() {
+    void test_Telecommande_constructeurVide()
+    {
+        assertNull(telecommande.lampes, "doit etre null");
+    }
+
+    @Test
+    void test_ajouterLampe_telecommandeVide ()
+    {
+        Lampe l1 = new Lampe("Cuisine");
+        telecommande.ajouterLampe(l1);
+
+        for (Lampe l : telecommande.lampes)
+        {
+            assertTrue(l.equals(l1), "doit etre vrai");
+        }
+        
+    }
+
+    @Test
+    void activerLampe()
+    {
+
     }
 
     @Test

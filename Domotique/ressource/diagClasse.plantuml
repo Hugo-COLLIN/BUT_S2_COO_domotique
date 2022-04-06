@@ -18,5 +18,12 @@ class Telecommande{
     + toString()
 }
 
+class Hifi{
+    - son : int
+    + allumer()
+    + eteindre()
+    + toString() : String
+}
+
 Telecommande -> "*" Lampe : -lampes
 @enduml

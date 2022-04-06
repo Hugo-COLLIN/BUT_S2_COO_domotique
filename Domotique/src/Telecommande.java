@@ -13,19 +13,11 @@ public class Telecommande {
     }
 
     public void activerLampe(int indexLampe){
-        try {
-            this.lampes.get(indexLampe).allumer();
-        } catch(NullPointerException e){
-            System.out.println("Cet indice de lampe n'existe pas !");
-        }
+        this.lampes.get(indexLampe).allumer();
     }
 
     public void desactiverLampe(int indexLampe){
-        try {
-            this.lampes.get(indexLampe).eteindre();
-        } catch (NullPointerException e){
-            System.out.println("Cet indice de lampe n'existe pas !");
-        }
+        this.lampes.get(indexLampe).eteindre();
     }
 
     public void activerTout(){

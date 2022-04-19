@@ -40,7 +40,7 @@ class TelecommandeTest {
      * a la position 0 de la liste
      */
     @Test
-    void activerLampe_pos0() {
+    void test_activerLampe_pos0() {
         // Initialisation des valeurs
         Telecommande t = new Telecommande();
         Lampe p = new Lampe("LampeTest");
@@ -58,7 +58,7 @@ class TelecommandeTest {
      * a la position 1 de la liste
      */
     @Test
-    void activerLampe_pos1() {
+    void test_activerLampe_pos1() {
         // Initialisation des valeurs
         Telecommande t = new Telecommande();
         Lampe p = new Lampe("LampeTest");
@@ -73,14 +73,14 @@ class TelecommandeTest {
     }
 
     @Test
-    void desactiverLampe() {
+    void test_desactiverLampe() {
     }
 
     @Test
-    void activerTout() {
+    void test_activerTout() {
     }
 
     @Test
-    void testToString() {
+    void test_testToString() {
     }
 }

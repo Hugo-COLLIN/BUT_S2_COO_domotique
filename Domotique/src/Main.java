@@ -11,8 +11,7 @@ public class Main {
 		Telecommande t = new Telecommande();
 
 		// ajoute des objets
-		// utilisation de refactor (extract method)
-		// pour rendre le code plus clair
+		// utilisation de refactor (extract method) pour rendre le code plus clair
 		ajouter4Lampes(t);
 
 		// test d'activation

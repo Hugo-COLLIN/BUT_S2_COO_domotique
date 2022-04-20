@@ -6,7 +6,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TelecommandeTest {
+class TelecommandeTest
+{
 
     //Atributes
     Telecommande telecommande;
@@ -18,14 +19,6 @@ class TelecommandeTest {
     {
         telecommande = new Telecommande();
     }
-
-    /*
-    @Test
-    void test_Telecommande_constructeurVide()
-    {
-        assertNull(telecommande.lampes, "doit etre null");
-    }
-     */
 
     /**
      * Teste l'ajout d'une lampe a une
@@ -41,7 +34,6 @@ class TelecommandeTest {
         {
             assertTrue(l.equals(l1), "doit etre vrai");
         }
-        
     }
 
     /**
@@ -72,7 +64,8 @@ class TelecommandeTest {
      * de la liste
      */
     @Test
-    void test_activerLampe_pos0() {
+    void test_activerLampe_pos0()
+    {
         // Initialisation des valeurs
         Telecommande t = new Telecommande();
         Lampe p = new Lampe("LampeTest");
@@ -91,7 +84,8 @@ class TelecommandeTest {
      * de la liste
      */
     @Test
-    void test_activerLampe_pos1() {
+    void test_activerLampe_pos1()
+    {
         // Initialisation des valeurs
         Telecommande t = new Telecommande();
         Lampe p = new Lampe("LampeTest");
@@ -135,24 +129,20 @@ class TelecommandeTest {
             // Verifie que l'exception a remonté le message attendu
             assertTrue(res.equals("Index 2 out of bounds for length 2") , "doit sortir une exception de dépassement");
         }
-
-
-        /*
-        // Test si la valeur a bien ete changer
-        assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");
-
-         */
     }
 
     @Test
-    void test_desactiverLampe() {
+    void test_desactiverLampe()
+    {
     }
 
     @Test
-    void test_activerTout() {
+    void test_activerTout()
+    {
     }
 
     @Test
-    void test_testToString() {
+    void test_testToString()
+    {
     }
 }

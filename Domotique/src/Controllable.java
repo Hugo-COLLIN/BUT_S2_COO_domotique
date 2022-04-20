@@ -16,4 +16,9 @@ public interface Controllable
      * @return etat de la lampe
      */
     public boolean isAllume();
+
+    /**
+     * retourne le descriptif de la lampe sous la forme nom + "On"/"Off"
+     */
+    public String toString();
 }

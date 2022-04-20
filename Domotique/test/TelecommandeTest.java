@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TelecommandeTest {
@@ -16,14 +19,16 @@ class TelecommandeTest {
         telecommande = new Telecommande();
     }
 
+    /*
     @Test
     void test_Telecommande_constructeurVide()
     {
         assertNull(telecommande.lampes, "doit etre null");
     }
+     */
 
     @Test
-    void test_ajouterLampe_telecommandeVide ()
+    void test_ajouterLampe_telecVide ()
     {
         Lampe l1 = new Lampe("Cuisine");
         telecommande.ajouterLampe(l1);
@@ -34,6 +39,37 @@ class TelecommandeTest {
         }
         
     }
+
+    @Test
+    void test_ajouterLampe_telec1Elem ()
+    {
+        //Initialisation
+        List<Lampe> lTest = new ArrayList<Lampe>();
+        lTest.add(new Lampe("Cuisine"));
+        lTest.add(new Lampe("Salon"));
+
+        for (int i = 0 ; i < lTest.size() ; i ++)
+        {
+            telecommande.ajouterLampe(lTest.get(i));
+            assertTrue(telecommande.lampes.get(i).equals(lTest.get(i)));
+        }
+
+
+        /*
+        Lampe l1 = new Lampe("Cuisine");
+        telecommande.ajouterLampe(l1);
+
+
+
+        for (Lampe l : telecommande.lampes)
+        {
+            assertTrue(l.equals(l1), "doit etre vrai");
+        }
+        */
+    }
+
+    // REDEFINIR LA METHODE EQUALS DANS LAMPE ?
+
 
     /**
      * Test de la methode activerLampe

@@ -26,12 +26,12 @@ class TelecommandeTest
      * telecommande vide
      */
     @Test
-    void test_ajouterLampe_telecVide ()
+    void test_ajouter_telecVide ()
     {
         p = new Lampe("Cuisine");
         t.ajouter(p);
 
-        for (Lampe l : t.lampes)
+        for (Controllable l : t.devices)
         {
             assertTrue(l.equals(p), "doit etre vrai");
         }
@@ -42,7 +42,7 @@ class TelecommandeTest
      * telecommande contenant deja 1 lampe
      */
     @Test
-    void test_ajouterLampe_telec1Elem ()
+    void test_ajouter_telec1Elem ()
     {
         //Initialisation
         List<Lampe> lTest = new ArrayList<Lampe>();
@@ -53,19 +53,19 @@ class TelecommandeTest
         for (int i = 0 ; i < lTest.size() ; i ++)
         {
             t.ajouter(lTest.get(i));
-            assertTrue(t.lampes.get(i).equals(lTest.get(i)));
+            assertTrue(t.devices.get(i).equals(lTest.get(i)));
         }
     }
 
 
-    //activerLampe()
+    //activer()
     /**
-     * Test que la methode activerLampe
+     * Test que la methode activer
      * allume la lampe a la position 0
      * de la liste
      */
     @Test
-    void test_activerLampe_pos0()
+    void test_activer_pos0()
     {
         // Initialisation des valeurs
         p = new Lampe("LampeTest");
@@ -79,12 +79,12 @@ class TelecommandeTest
     }
 
     /**
-     * Test que la methode activerLampe
+     * Test que la methode activer
      * allume la lampe a la position 1
      * de la liste
      */
     @Test
-    void test_activerLampe_pos1()
+    void test_activer_pos1()
     {
         // Initialisation des valeurs
         p = new Lampe("LampeTest");
@@ -99,12 +99,12 @@ class TelecommandeTest
     }
 
     /**
-     * Test que la methode activerLampe
+     * Test que la methode activer
      * renvoie une erreur si la lampe
      * n'existe pas dans la liste
      */
     @Test
-    void test_activerLampe_inexistant()
+    void test_activer_inexistant()
     {
         // Initialisation des valeurs
         String res = "";
@@ -129,14 +129,14 @@ class TelecommandeTest
         }
     }
 
-    //desactiverLampe()
+    //desactiver()
     /**
-     * Test que la methode desactiverLampe
+     * Test que la methode desactiver
      * eteint la lampe a la position 0
      * de la liste
      */
     @Test
-    void test_desactiverLampe_pos0()
+    void test_desactiver_pos0()
     {
         // Initialisation des valeurs
         p = new Lampe("LampeTest");
@@ -151,12 +151,12 @@ class TelecommandeTest
     }
 
     /**
-     * Test que la methode desactiverLampe
+     * Test que la methode desactiver
      * eteint la lampe a la position 1
      * de la liste
      */
     @Test
-    void test_desactiverLampe_pos1()
+    void test_desactiver_pos1()
     {
         // Initialisation des valeurs
         p = new Lampe("LampeTest");
@@ -172,12 +172,12 @@ class TelecommandeTest
     }
 
     /**
-     * Test que la methode desactiverLampe
+     * Test que la methode desactiver
      * renvoie une erreur si la lampe
      * n'existe pas dans la liste
      */
     @Test
-    void test_desactiverLampe_inexistant()
+    void test_desactiver_inexistant()
     {
         // Initialisation des valeurs
         String res = "";
@@ -206,11 +206,11 @@ class TelecommandeTest
     //activerToutLampes()
     /**
      * Test que la methode activerToutLampes
-     * allume toutes les lampes
+     * allume toutes les devices
      * de la liste
      */
     @Test
-    void test_activerToutLampes_pasVide()
+    void test_activerTout_pasVide()
     {
         // Initialisation des valeurs
         t.ajouter(new Lampe("Lampe1"));
@@ -220,7 +220,7 @@ class TelecommandeTest
         t.activerTout();
 
         // Test si la valeur a bien ete changee
-        for (Lampe l : t.lampes)
+        for (Controllable l : t.devices)
         {
             assertTrue(l.isAllume(), "La lampe ne s'est pas allumee");
         }

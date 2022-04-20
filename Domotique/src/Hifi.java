@@ -1,7 +1,7 @@
 /**
  * classe qui represente une chaine hifi
  */
-public class Hifi  implements Controllable
+public class Hifi implements Controllable
 {
 
 	/**
@@ -26,6 +26,16 @@ public class Hifi  implements Controllable
 	public void eteindre() {
 		this.son = 0;
 
+	}
+
+	/**
+	 * permet de savoir si la chaine est allumee
+	 *
+	 * @return etat de la chaine
+	 */
+	public boolean isAllume()
+	{
+		return this.son == 0;
 	}
 
 	/**

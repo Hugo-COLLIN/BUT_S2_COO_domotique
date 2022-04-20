@@ -1,29 +1,76 @@
 @startuml
-class Lampe{
+
+interface Controllable {
+    + allumer()
+    + eteindre()
+    + isAllume() : boolean
+    + toString() : String
+}
+
+class Lampe {
     - nom : String
     - allume : boolean
     + Lampe(String nom)
     + allumer()
     + eteindre()
-    + toString()
-
-}
-
-class Telecommande{
-    + Telecommande()
-    + ajouterLampe(Lampe lampe)
-    + activerLampe(int indexLampe)
-    + desactiverLampe(int indexLampe)
-    + activerTout()
-    + toString()
-}
-
-class Hifi{
-    - son : int
-    + allumer()
-    + eteindre()
+    + isAllume() : boolean
     + toString() : String
 }
 
-Telecommande -> "*" Lampe : -lampes
+class Hifi {
+    - son : int
+    + allumer()
+    + eteindre()
+    + isAllume() : boolean
+    + toString() : String
+}
+
+class Telecommande {
+    + Telecommande()
+    + ajouter(Controllable device)
+    + activer(int indexControllable)
+    + desactiver(int indexControllable)
+    + activerTout()
+    + toString() : String
+}
+
+
+
+class Main {
+    + main (String) {static}
+    + lancerMenu (Telecommande) {static}
+    + ajouter4Lampes (Telecommande) {static}
+}
+
+class LampeTest {
+    + testLampe()
+    + testAllumer()
+    + testAllumer_allumee()
+    + testeteindre_allumee()
+    + testToString_eteinte()
+    + testToString_allumee()
+}
+
+class TelecommandeTest {
+    + preparation ()
+    + test_ajouter_telecVide ()
+    + test_ajouter_telec1Elem ()
+    + test_activer_pos0 ()
+    + test_activer_pos1 ()
+    + test_activer_inexistant ()
+    + test_desactiver_pos0 ()
+    + test_desactiver_pos1 ()
+    + test_desactiver_inexistant ()
+    + test_activerTout_pasVide ()
+    + test_toString_ok ()
+}
+
+Telecommande -> "*" Controllable : - devices
+
+Lampe ..|> Controllable
+Hifi ..|> Controllable
+
+TelecommandeTest --> "1" Telecommande : - t
+TelecommandeTest -> "1" Lampe : - p
+
 @enduml

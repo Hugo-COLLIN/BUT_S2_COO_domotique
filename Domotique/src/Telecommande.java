@@ -28,19 +28,39 @@ public class Telecommande
 
 
     // >Lampe
-    public void ajouterLampe(Lampe lampe){
+    public void ajouter(Lampe lampe){
         this.lampes.add(lampe);
     }
 
-    public void activerLampe(int indexLampe){
+    public void activer(int indexLampe){
         this.lampes.get(indexLampe).allumer();
     }
 
-    public void desactiverLampe(int indexLampe){
+    public void desactiver(int indexLampe){
         this.lampes.get(indexLampe).eteindre();
     }
 
-    public void activerToutLampes(){
+    public void activerTout(){
+        for(Lampe lampe : this.lampes){
+            lampe.allumer();
+        }
+    }
+
+
+    // >Hifi
+    public void ajouterHifi(Hifi hifi){
+        this.hifi.add(hifi);
+    }
+
+    public void activerHifi(int indexHifi){
+        this.hifi.get(indexHifi).allumer();
+    }
+
+    public void desactiverHifi(int indexLampe){
+        this.lampes.get(indexLampe).eteindre();
+    }
+
+    public void activerToutHifi(){
         for(Lampe lampe : this.lampes){
             lampe.allumer();
         }

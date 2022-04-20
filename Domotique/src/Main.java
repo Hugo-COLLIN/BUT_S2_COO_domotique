@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * classe qui cree des lampes et une telecommande associee.
+ * classe qui cree des appareils et une telecommande associee.
  */
 
 public class Main {
@@ -39,7 +39,7 @@ public class Main {
 		while (!fini) {
 			
 			// demande lampe et commande
-			System.out.println("entrer le numero de la lampe");
+			System.out.println("entrer le numero de l'appareil'");
 			int choix = sc.nextInt();
 			System.out.println("entrer commande (+/-/exit)");
 			String com = sc.nextLine();

@@ -5,12 +5,11 @@ public class Telecommande
 {
     //Attributes
     List<Controllable> devices;
-    List<Hifi> hifi;
 
     //Constructor
-    public Telecommande(){
+    public Telecommande()
+    {
         this.devices = new ArrayList<Controllable>();
-        this.hifi = new ArrayList<Hifi>();
     }
 
     //Methods
@@ -26,20 +25,23 @@ public class Telecommande
         this.devices.get(indexControllable).eteindre();
     }
 
-    public void activerTout(){
-        for(Controllable lampe : this.devices){
-            lampe.allumer();
-        }
+    public void activerTout()
+    {
+        for(Controllable device : this.devices)
+            device.allumer();
     }
 
     public String toString(){
         StringBuilder msg = new StringBuilder();
-        if (this.devices.size() > 0) {
-            for (Controllable lampe : this.devices) {
-                msg.append(lampe.toString()).append("\n");
-            }
-        } else
+
+        if (this.devices.size() > 0)
+        {
+            for (Controllable device : this.devices)
+                msg.append(device.toString()).append("\n");
+        }
+        else
             msg = new StringBuilder("La telecommande n'est reliee a aucune lampe");
+
         return msg.toString();
     }
 }

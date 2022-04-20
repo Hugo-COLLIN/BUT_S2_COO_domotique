@@ -221,7 +221,35 @@ class TelecommandeTest
     }
 
     @Test
-    void test_testToString()
+    void test_activerTout_vide()
     {
+        // Appel de la methode
+        t.activerTout();
+
+        // Teste si la valeur a bien ete changee
+        for (Lampe l : t.lampes)
+        {
+            assertTrue(l.isAllume(), "La lampe ne s'est pas allumee");
+        }
+    }
+
+    @Test
+    void test_toString_ok()
+    {
+        // Initialisation des valeurs
+        t.ajouterLampe(new Lampe("Lampe1"));
+        t.ajouterLampe(new Lampe("Lampe2"));
+        t.activerLampe(1);
+        String res;
+        String expected = """
+                Lampe1: Off
+                Lampe2: On
+                """;
+
+        //Appel methode
+        res = t.toString();
+
+        //Test
+        assertEquals(res, expected, "Message doit etre identique");
     }
 }

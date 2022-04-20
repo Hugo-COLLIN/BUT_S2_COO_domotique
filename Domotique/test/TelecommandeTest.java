@@ -9,14 +9,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class TelecommandeTest
 {
     //Atributes
-    Telecommande telecommande;
+    Telecommande t;
+    Lampe p;
 
 
     //Methods
     @BeforeEach
     void preparation ()
     {
-        telecommande = new Telecommande();
+        t = new Telecommande();
     }
 
     //ajouterLampe()
@@ -27,12 +28,12 @@ class TelecommandeTest
     @Test
     void test_ajouterLampe_telecVide ()
     {
-        Lampe l1 = new Lampe("Cuisine");
-        telecommande.ajouterLampe(l1);
+        p = new Lampe("Cuisine");
+        t.ajouterLampe(p);
 
-        for (Lampe l : telecommande.lampes)
+        for (Lampe l : t.lampes)
         {
-            assertTrue(l.equals(l1), "doit etre vrai");
+            assertTrue(l.equals(p), "doit etre vrai");
         }
     }
 
@@ -47,11 +48,12 @@ class TelecommandeTest
         List<Lampe> lTest = new ArrayList<Lampe>();
         lTest.add(new Lampe("Cuisine"));
         lTest.add(new Lampe("Salon"));
-
+        
+        //Ajout lampe et test
         for (int i = 0 ; i < lTest.size() ; i ++)
         {
-            telecommande.ajouterLampe(lTest.get(i));
-            assertTrue(telecommande.lampes.get(i).equals(lTest.get(i)));
+            t.ajouterLampe(lTest.get(i));
+            assertTrue(t.lampes.get(i).equals(lTest.get(i)));
         }
     }
 
@@ -66,14 +68,13 @@ class TelecommandeTest
     void test_activerLampe_pos0()
     {
         // Initialisation des valeurs
-        Telecommande t = new Telecommande();
-        Lampe p = new Lampe("LampeTest");
+        p = new Lampe("LampeTest");
         t.ajouterLampe(p);
 
         // Appel de la methode
         t.activerLampe(0);
 
-        // Test si la valeur a bien ete changer
+        // Test si la valeur a bien ete changee
         assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");
     }
 
@@ -86,15 +87,14 @@ class TelecommandeTest
     void test_activerLampe_pos1()
     {
         // Initialisation des valeurs
-        Telecommande t = new Telecommande();
-        Lampe p = new Lampe("LampeTest");
+        p = new Lampe("LampeTest");
         t.ajouterLampe(new Lampe("LampeUseless"));
         t.ajouterLampe(p);
 
         // Appel de la methode
         t.activerLampe(1);
 
-        // Test si la valeur a bien ete changer
+        // Test si la valeur a bien ete changee
         assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");
     }
 
@@ -108,8 +108,7 @@ class TelecommandeTest
     {
         // Initialisation des valeurs
         String res = "";
-        Telecommande t = new Telecommande();
-        Lampe p = new Lampe("LampeTest");
+        p = new Lampe("LampeTest");
         t.ajouterLampe(new Lampe("LampeUseless"));
         t.ajouterLampe(p);
 
@@ -140,15 +139,14 @@ class TelecommandeTest
     void test_desactiverLampe_pos0()
     {
         // Initialisation des valeurs
-        Telecommande t = new Telecommande();
-        Lampe p = new Lampe("LampeTest");
+        p = new Lampe("LampeTest");
         t.ajouterLampe(p);
         t.activerLampe(0);
 
         // Appel de la methode
         t.desactiverLampe(0);
 
-        // Test si la valeur a bien ete changer
+        // Test si la valeur a bien ete changee
         assertFalse(p.isAllume(), "La lampe n'est pas eteinte'");
     }
 
@@ -161,8 +159,7 @@ class TelecommandeTest
     void test_desactiverLampe_pos1()
     {
         // Initialisation des valeurs
-        Telecommande t = new Telecommande();
-        Lampe p = new Lampe("LampeTest");
+        p = new Lampe("LampeTest");
         t.ajouterLampe(new Lampe("LampeUseless"));
         t.ajouterLampe(p);
         t.activerLampe(1);
@@ -170,7 +167,7 @@ class TelecommandeTest
         // Appel de la methode
         t.desactiverLampe(1);
 
-        // Test si la valeur a bien ete changer
+        // Test si la valeur a bien ete changee
         assertFalse(p.isAllume(), "La lampe ne s'est pas eteinte");
     }
 
@@ -184,8 +181,7 @@ class TelecommandeTest
     {
         // Initialisation des valeurs
         String res = "";
-        Telecommande t = new Telecommande();
-        Lampe p = new Lampe("LampeTest");
+        p = new Lampe("LampeTest");
         t.ajouterLampe(new Lampe("LampeUseless"));
         t.ajouterLampe(p);
 
@@ -206,15 +202,22 @@ class TelecommandeTest
         }
     }
 
-    
-    @Test
-    void test_desactiverLampe()
-    {
-    }
 
     @Test
-    void test_activerTout()
+    void test_activerTout_pasVide()
     {
+        // Initialisation des valeurs
+        t.ajouterLampe(new Lampe("Lampe1"));
+        t.ajouterLampe(new Lampe("Lampe2"));
+
+        // Appel de la methode
+        t.activerTout();
+
+        // Test si la valeur a bien ete changee
+        for (Lampe l : t.lampes)
+        {
+            assertTrue(l.isAllume(), "La lampe ne s'est pas allumee");
+        }
     }
 
     @Test

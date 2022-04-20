@@ -203,21 +203,21 @@ class TelecommandeTest
     }
 
 
-    //activerTout()
+    //activerToutLampes()
     /**
-     * Test que la methode activerTout
+     * Test que la methode activerToutLampes
      * allume toutes les lampes
      * de la liste
      */
     @Test
-    void test_activerTout_pasVide()
+    void test_activerToutLampes_pasVide()
     {
         // Initialisation des valeurs
         t.ajouterLampe(new Lampe("Lampe1"));
         t.ajouterLampe(new Lampe("Lampe2"));
 
         // Appel de la methode
-        t.activerTout();
+        t.activerToutLampes();
 
         // Test si la valeur a bien ete changee
         for (Lampe l : t.lampes)

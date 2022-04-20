@@ -9,8 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class TelecommandeTest
 {
     //Atributes
-    Telecommande t;
-    Lampe p;
+    private Telecommande t;
+    private Lampe p;
 
 
     //Methods
@@ -26,14 +26,14 @@ class TelecommandeTest
      * telecommande vide
      */
     @Test
-    void test_ajouter_telecVide ()
+    public void test_ajouter_telecVide ()
     {
         p = new Lampe("Cuisine");
         t.ajouter(p);
 
         for (Controllable l : t.devices)
         {
-            assertTrue(l.equals(p), "doit etre vrai");
+            assertEquals(l, p, "doit etre vrai");
         }
     }
 
@@ -42,7 +42,7 @@ class TelecommandeTest
      * telecommande contenant deja 1 lampe
      */
     @Test
-    void test_ajouter_telec1Elem ()
+    public void test_ajouter_telec1Elem ()
     {
         //Initialisation
         List<Lampe> lTest = new ArrayList<Lampe>();
@@ -53,7 +53,7 @@ class TelecommandeTest
         for (int i = 0 ; i < lTest.size() ; i ++)
         {
             t.ajouter(lTest.get(i));
-            assertTrue(t.devices.get(i).equals(lTest.get(i)));
+            assertEquals(t.devices.get(i), lTest.get(i));
         }
     }
 
@@ -65,7 +65,7 @@ class TelecommandeTest
      * de la liste
      */
     @Test
-    void test_activer_pos0()
+    public void test_activer_pos0 ()
     {
         // Initialisation des valeurs
         p = new Lampe("LampeTest");
@@ -84,7 +84,7 @@ class TelecommandeTest
      * de la liste
      */
     @Test
-    void test_activer_pos1()
+    public void test_activer_pos1 ()
     {
         // Initialisation des valeurs
         p = new Lampe("LampeTest");
@@ -104,7 +104,7 @@ class TelecommandeTest
      * n'existe pas dans la liste
      */
     @Test
-    void test_activer_inexistant()
+    public void test_activer_inexistant ()
     {
         // Initialisation des valeurs
         String res = "";
@@ -125,7 +125,7 @@ class TelecommandeTest
         finally
         {
             // Verifie que l'exception a remonté le message attendu
-            assertTrue(res.equals("Index 2 out of bounds for length 2") , "doit sortir une exception de dépassement");
+            assertEquals("Index 2 out of bounds for length 2", res, "doit sortir une exception de dépassement");
         }
     }
 
@@ -136,7 +136,7 @@ class TelecommandeTest
      * de la liste
      */
     @Test
-    void test_desactiver_pos0()
+    public void test_desactiver_pos0 ()
     {
         // Initialisation des valeurs
         p = new Lampe("LampeTest");
@@ -156,7 +156,7 @@ class TelecommandeTest
      * de la liste
      */
     @Test
-    void test_desactiver_pos1()
+    public void test_desactiver_pos1 ()
     {
         // Initialisation des valeurs
         p = new Lampe("LampeTest");
@@ -177,7 +177,7 @@ class TelecommandeTest
      * n'existe pas dans la liste
      */
     @Test
-    void test_desactiver_inexistant()
+    public void test_desactiver_inexistant ()
     {
         // Initialisation des valeurs
         String res = "";
@@ -198,7 +198,7 @@ class TelecommandeTest
         finally
         {
             // Verifie que l'exception a remonté le message attendu
-            assertTrue(res.equals("Index 2 out of bounds for length 2") , "doit sortir une exception de dépassement");
+            assertEquals("Index 2 out of bounds for length 2", res, "doit sortir une exception de dépassement");
         }
     }
 
@@ -210,7 +210,7 @@ class TelecommandeTest
      * de la liste
      */
     @Test
-    void test_activerTout_pasVide()
+    public void test_activerTout_pasVide ()
     {
         // Initialisation des valeurs
         t.ajouter(new Lampe("Lampe1"));
@@ -231,7 +231,7 @@ class TelecommandeTest
      * renvoie bien la chaine attendue
      */
     @Test
-    void test_toString_ok()
+    public void test_toString_ok ()
     {
         // Initialisation des valeurs
         t.ajouter(new Lampe("Lampe1"));

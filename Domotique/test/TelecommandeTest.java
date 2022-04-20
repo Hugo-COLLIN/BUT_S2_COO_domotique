@@ -27,6 +27,10 @@ class TelecommandeTest {
     }
      */
 
+    /**
+     * Teste l'ajout d'une lampe a une
+     * telecommande vide
+     */
     @Test
     void test_ajouterLampe_telecVide ()
     {
@@ -40,6 +44,10 @@ class TelecommandeTest {
         
     }
 
+    /**
+     * Teste l'ajout d'une lampe a une
+     * telecommande contenant deja 1 lampe
+     */
     @Test
     void test_ajouterLampe_telec1Elem ()
     {
@@ -59,8 +67,9 @@ class TelecommandeTest {
 
 
     /**
-     * Test de la methode activerLampe
-     * a la position 0 de la liste
+     * Test que la methode activerLampe
+     * allume la lampe a la position 0
+     * de la liste
      */
     @Test
     void test_activerLampe_pos0() {
@@ -77,8 +86,9 @@ class TelecommandeTest {
     }
 
     /**
-     * Test de la methode activerLampe
-     * a la position 1 de la liste
+     * Test que la methode activerLampe
+     * allume la lampe a la position 1
+     * de la liste
      */
     @Test
     void test_activerLampe_pos1() {
@@ -95,6 +105,11 @@ class TelecommandeTest {
         assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");
     }
 
+    /**
+     * Test que la methode activerLampe
+     * renvoie une erreur si la lampe
+     * n'existe pas dans la liste
+     */
     @Test
     void test_activerLampe_inexistant()
     {

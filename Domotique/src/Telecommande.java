@@ -27,13 +27,13 @@ public class Telecommande {
     }
 
     public String toString(){
-        String msg = "";
+        StringBuilder msg = new StringBuilder();
         if (this.lampes.size() > 0) {
             for (Lampe lampe : this.lampes) {
-                msg += lampe.toString() + "\n";
+                msg.append(lampe.toString()).append("\n");
             }
         } else
-            msg = "La telecommande n'est reliee a aucune lampe";
-        return msg;
+            msg = new StringBuilder("La telecommande n'est reliee a aucune lampe");
+        return msg.toString();
     }
 }

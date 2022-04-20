@@ -203,6 +203,12 @@ class TelecommandeTest
     }
 
 
+    //activerTout()
+    /**
+     * Test que la methode activerTout
+     * allume toutes les lampes
+     * de la liste
+     */
     @Test
     void test_activerTout_pasVide()
     {
@@ -220,19 +226,10 @@ class TelecommandeTest
         }
     }
 
-    @Test
-    void test_activerTout_vide()
-    {
-        // Appel de la methode
-        t.activerTout();
-
-        // Teste si la valeur a bien ete changee
-        for (Lampe l : t.lampes)
-        {
-            assertTrue(l.isAllume(), "La lampe ne s'est pas allumee");
-        }
-    }
-
+    /**
+     * Test que la methode toString
+     * renvoie bien la chaine attendue
+     */
     @Test
     void test_toString_ok()
     {

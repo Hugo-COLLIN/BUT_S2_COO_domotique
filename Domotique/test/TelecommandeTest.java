@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TelecommandeTest
 {
-
     //Atributes
     Telecommande telecommande;
 
@@ -20,6 +19,7 @@ class TelecommandeTest
         telecommande = new Telecommande();
     }
 
+    //ajouterLampe()
     /**
      * Teste l'ajout d'une lampe a une
      * telecommande vide
@@ -55,9 +55,8 @@ class TelecommandeTest
         }
     }
 
-    // REDEFINIR LA METHODE EQUALS DANS LAMPE ?
 
-
+    //activerLampe()
     /**
      * Test que la methode activerLampe
      * allume la lampe a la position 0
@@ -131,6 +130,83 @@ class TelecommandeTest
         }
     }
 
+    //desactiverLampe()
+    /**
+     * Test que la methode desactiverLampe
+     * eteint la lampe a la position 0
+     * de la liste
+     */
+    @Test
+    void test_desactiverLampe_pos0()
+    {
+        // Initialisation des valeurs
+        Telecommande t = new Telecommande();
+        Lampe p = new Lampe("LampeTest");
+        t.ajouterLampe(p);
+        t.activerLampe(0);
+
+        // Appel de la methode
+        t.desactiverLampe(0);
+
+        // Test si la valeur a bien ete changer
+        assertFalse(p.isAllume(), "La lampe n'est pas eteinte'");
+    }
+
+    /**
+     * Test que la methode desactiverLampe
+     * eteint la lampe a la position 1
+     * de la liste
+     */
+    @Test
+    void test_desactiverLampe_pos1()
+    {
+        // Initialisation des valeurs
+        Telecommande t = new Telecommande();
+        Lampe p = new Lampe("LampeTest");
+        t.ajouterLampe(new Lampe("LampeUseless"));
+        t.ajouterLampe(p);
+        t.activerLampe(1);
+
+        // Appel de la methode
+        t.desactiverLampe(1);
+
+        // Test si la valeur a bien ete changer
+        assertFalse(p.isAllume(), "La lampe ne s'est pas eteinte");
+    }
+
+    /**
+     * Test que la methode desactiverLampe
+     * renvoie une erreur si la lampe
+     * n'existe pas dans la liste
+     */
+    @Test
+    void test_desactiverLampe_inexistant()
+    {
+        // Initialisation des valeurs
+        String res = "";
+        Telecommande t = new Telecommande();
+        Lampe p = new Lampe("LampeTest");
+        t.ajouterLampe(new Lampe("LampeUseless"));
+        t.ajouterLampe(p);
+
+        try
+        {
+            // Appel de la methode
+            t.desactiverLampe(2);
+        }
+        catch (IndexOutOfBoundsException e)
+        {
+            // Recuperation du message de l'exception
+            res = e.getMessage();
+        }
+        finally
+        {
+            // Verifie que l'exception a remonté le message attendu
+            assertTrue(res.equals("Index 2 out of bounds for length 2") , "doit sortir une exception de dépassement");
+        }
+    }
+
+    
     @Test
     void test_desactiverLampe()
     {

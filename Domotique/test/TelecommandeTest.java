@@ -53,19 +53,6 @@ class TelecommandeTest {
             telecommande.ajouterLampe(lTest.get(i));
             assertTrue(telecommande.lampes.get(i).equals(lTest.get(i)));
         }
-
-
-        /*
-        Lampe l1 = new Lampe("Cuisine");
-        telecommande.ajouterLampe(l1);
-
-
-
-        for (Lampe l : telecommande.lampes)
-        {
-            assertTrue(l.equals(l1), "doit etre vrai");
-        }
-        */
     }
 
     // REDEFINIR LA METHODE EQUALS DANS LAMPE ?
@@ -106,6 +93,40 @@ class TelecommandeTest {
 
         // Test si la valeur a bien ete changer
         assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");
+    }
+
+    @Test
+    void test_activerLampe_inexistant()
+    {
+        // Initialisation des valeurs
+        String res = "";
+        Telecommande t = new Telecommande();
+        Lampe p = new Lampe("LampeTest");
+        t.ajouterLampe(new Lampe("LampeUseless"));
+        t.ajouterLampe(p);
+
+        try
+        {
+            // Appel de la methode
+            t.activerLampe(2);
+        }
+        catch (IndexOutOfBoundsException e)
+        {
+            // Recuperation du message de l'exception
+            res = e.getMessage();
+        }
+        finally
+        {
+            // Verifie que l'exception a remonté le message attendu
+            assertTrue(res.equals("Index 2 out of bounds for length 2") , "doit sortir une exception de dépassement");
+        }
+
+
+        /*
+        // Test si la valeur a bien ete changer
+        assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");
+
+         */
     }
 
     @Test

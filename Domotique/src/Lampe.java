@@ -1,4 +1,4 @@
-public class Lampe implements Controllable
+public class Lampe
 {
     //Attributes
     /**

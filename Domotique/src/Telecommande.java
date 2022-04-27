@@ -36,7 +36,7 @@ public class Telecommande
 
         if (this.lampes.size() > 0)
         {
-            for (Controllable device : this.lampes)
+            for (Lampe device : this.lampes)
                 msg.append(device.toString()).append("\n");
         }
         else

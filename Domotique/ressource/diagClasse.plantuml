@@ -4,24 +4,27 @@ class Lampe {
     - nom : String
     - allume : boolean
     + Lampe(String nom)
-    + allumerLampe()
-    + eteindreLampe()
-    + isAllumeLampe() : boolean
+    + allumer()
+    + eteindre()
+    + isAllume() : boolean
     + toString() : String
 }
 
 class Hifi {
     - son : int
-    + allumerHifi()
-    + eteindreHifi()
+    + allumer()
+    + eteindre()
     + toString() : String
 }
 
 class Telecommande {
     + Telecommande()
-    + ajouter(Controllable device)
-    + activer(int indexControllable)
-    + desactiver(int indexControllable)
+    + ajouter(Lampe)
+    + ajouter(Hifi)
+    + activerLampe(int)
+    + activerHifi(int)
+    + desactiverLampe(int)
+    + desactiverHifi(int)
     + activerTout()
     + toString() : String
 }

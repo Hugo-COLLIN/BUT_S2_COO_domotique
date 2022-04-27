@@ -51,7 +51,15 @@ public class Telecommande
                 msg.append(device.toString()).append("\n");
         }
         else
-            msg = new StringBuilder("La telecommande n'est reliee a aucune lampe");
+            msg = new StringBuilder("La telecommande n'est reliee a aucune lampe.");
+
+        if (this.hifis.size() > 0)
+        {
+            for (Hifi device : this.hifis)
+                msg.append(device.toString()).append("\n");
+        }
+        else
+            msg = new StringBuilder("La telecommande n'est reliee a aucune chaine hifi.");
 
         return msg.toString();
     }

@@ -31,7 +31,7 @@ class TelecommandeTest
         p = new Lampe("Cuisine");
         t.ajouter(p);
 
-        for (Controllable l : t.devices)
+        for (Controllable l : t.lampes)
         {
             assertEquals(l, p, "doit etre vrai");
         }
@@ -53,7 +53,7 @@ class TelecommandeTest
         for (int i = 0 ; i < lTest.size() ; i ++)
         {
             t.ajouter(lTest.get(i));
-            assertEquals(t.devices.get(i), lTest.get(i));
+            assertEquals(t.lampes.get(i), lTest.get(i));
         }
     }
 
@@ -220,7 +220,7 @@ class TelecommandeTest
         t.activerTout();
 
         // Test si la valeur a bien ete changee
-        for (Controllable l : t.devices)
+        for (Controllable l : t.lampes)
         {
             assertTrue(l.isAllume(), "La lampe ne s'est pas allumee");
         }

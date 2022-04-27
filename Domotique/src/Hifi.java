@@ -1,8 +1,7 @@
 /**
  * classe qui represente une chaine hifi
  */
-public class Hifi implements Controllable
-{
+class Hifi {
 
 	/**
 	 * l'intensite du son de la chaine on suppose que la chaine est eteinte si
@@ -29,18 +28,8 @@ public class Hifi implements Controllable
 	}
 
 	/**
-	 * permet de savoir si la chaine est allumee
-	 *
-	 * @return etat de la chaine
-	 */
-	public boolean isAllume()
-	{
-		return this.son == 0;
-	}
-
-	/**
 	 * surcharge de la methode affichage sous la forme "Hifi:10"
-	 * 
+	 *
 	 * @return descriptif sous forme de chaine
 	 */
 	public String toString() {

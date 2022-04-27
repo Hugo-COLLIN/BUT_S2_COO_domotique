@@ -238,15 +238,12 @@ class TelecommandeTest
         t.ajouter(new Lampe("Lampe2"));
         t.activer(1);
         String res;
-        String expected = """
-                Lampe1: Off
-                Lampe2: On
-                """;
+        String expected = "Lampe1: Off\nLampe2: On\n";
 
         //Appel methode
         res = t.toString();
 
         //Test
-        assertEquals(res, expected, "Message doit etre identique");
+        assertEquals(expected, res, "Message doit etre identique");
     }
 }

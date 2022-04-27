@@ -8,3 +8,5 @@ Nous avons ajouté 16 lignes.
 2.3. cf. ressources/diag2_3.png
 
 2.4. En cas de bug, on est obligé de modifier le code pour chaque liste d'objets. Si on veut modifier les indices des listes, il faut faire les modifications pour les méthodes de chaque type d'objet. Donc le code n'est pas facilement maintenable.
+
+2.5. La classe Telecommande dépend des classes Lampe et Hifi. Si on modifie la classe Telecommande, il faudra modifier les autres classes.

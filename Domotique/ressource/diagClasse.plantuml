@@ -1,27 +1,19 @@
 @startuml
 
-interface Controllable {
-    + allumer()
-    + eteindre()
-    + isAllume() : boolean
-    + toString() : String
-}
-
 class Lampe {
     - nom : String
     - allume : boolean
     + Lampe(String nom)
-    + allumer()
-    + eteindre()
-    + isAllume() : boolean
+    + allumerLampe()
+    + eteindreLampe()
+    + isAllumeLampe() : boolean
     + toString() : String
 }
 
 class Hifi {
     - son : int
-    + allumer()
-    + eteindre()
-    + isAllume() : boolean
+    + allumerHifi()
+    + eteindreHifi()
     + toString() : String
 }
 
@@ -34,18 +26,13 @@ class Telecommande {
     + toString() : String
 }
 
-
-
 class Main {
     + main (String) {static}
     + lancerMenu (Telecommande) {static}
     + ajouter4Lampes (Telecommande) {static}
 }
 
-Telecommande -> "*" Controllable : - devices
-
-Lampe ..|> Controllable
-Hifi ..|> Controllable
-
+Telecommande --> "*" Lampe : - lampes
+Telecommande -> "*" Hifi : - hifi
 
 @enduml

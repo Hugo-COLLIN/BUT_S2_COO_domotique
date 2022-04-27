@@ -1,6 +1,6 @@
 Rapport Hugo COLLIN, Gregory DARDENNE
 
-2.1. cf. ressources/diagram.png
+2.1. cf. ressources/diagClasse.png
 
 2.2. Nous avons créé un tableau de chaînes en plus du tableau de lampes, ainsi que des méthodes identiques à celles de Lampes mais pour manipuler les Hifi. La méthode allumerTout allume toutes les lampes et toutes les chaines hifi.
 Nous avons ajouté 16 lignes.

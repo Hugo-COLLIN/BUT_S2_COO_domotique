@@ -72,7 +72,7 @@ class TelecommandeTest
         t.ajouter(p);
 
         // Appel de la methode
-        t.activer(0);
+        t.activerLampe(0);
 
         // Test si la valeur a bien ete changee
         assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");
@@ -92,7 +92,7 @@ class TelecommandeTest
         t.ajouter(p);
 
         // Appel de la methode
-        t.activer(1);
+        t.activerLampe(1);
 
         // Test si la valeur a bien ete changee
         assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");
@@ -115,7 +115,7 @@ class TelecommandeTest
         try
         {
             // Appel de la methode
-            t.activer(2);
+            t.activerLampe(2);
         }
         catch (IndexOutOfBoundsException e)
         {
@@ -141,10 +141,10 @@ class TelecommandeTest
         // Initialisation des valeurs
         p = new Lampe("LampeTest");
         t.ajouter(p);
-        t.activer(0);
+        t.activerLampe(0);
 
         // Appel de la methode
-        t.desactiver(0);
+        t.desactiverLampe(0);
 
         // Test si la valeur a bien ete changee
         assertFalse(p.isAllume(), "La lampe n'est pas eteinte'");
@@ -162,10 +162,10 @@ class TelecommandeTest
         p = new Lampe("LampeTest");
         t.ajouter(new Lampe("LampeUseless"));
         t.ajouter(p);
-        t.activer(1);
+        t.activerLampe(1);
 
         // Appel de la methode
-        t.desactiver(1);
+        t.desactiverLampe(1);
 
         // Test si la valeur a bien ete changee
         assertFalse(p.isAllume(), "La lampe ne s'est pas eteinte");
@@ -188,7 +188,7 @@ class TelecommandeTest
         try
         {
             // Appel de la methode
-            t.desactiver(2);
+            t.desactiverLampe(2);
         }
         catch (IndexOutOfBoundsException e)
         {
@@ -236,7 +236,7 @@ class TelecommandeTest
         // Initialisation des valeurs
         t.ajouter(new Lampe("Lampe1"));
         t.ajouter(new Lampe("Lampe2"));
-        t.activer(1);
+        t.activerLampe(1);
         String res;
         String expected = "Lampe1: Off\nLampe2: On\n";
 

@@ -6,3 +6,5 @@ Rapport Hugo COLLIN, Gregory DARDENNE
 Nous avons ajouté 16 lignes.
 
 2.3. cf. ressources/diag2_3.png
+
+2.4. En cas de bug, on est obligé de modifier le code pour chaque liste d'objets.

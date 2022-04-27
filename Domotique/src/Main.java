@@ -15,8 +15,8 @@ public class Main {
 		ajouter4Lampes(t);
 
 		// test d'activation
-		t.activer(1);
-		t.activer(3);
+		t.activerLampe(1);
+		t.activerLampe(3);
 		System.out.println(t);
 
 		// gestion du menu
@@ -48,12 +48,12 @@ public class Main {
 			// si la commande est +, on active
 			if (com.equals("+")) {
 				System.out.println("== activer "+choix+"==");
-				t.activer(choix);
+				t.activerLampe(choix);
 			}
 			// si la commande est - on descactive
 			else if (com.equals("-")) {
 				System.out.println("== desactiver "+choix+"==");
-				t.desactiver(choix);
+				t.desactiverLampe(choix);
 			}
 			// si la commande est exit, on arrete
 			else if (com.equals("exit")) {

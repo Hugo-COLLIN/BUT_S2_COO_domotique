@@ -33,5 +33,4 @@ public class LampeAdaptateur implements Appareil
                 "lampe=" + lampe +
                 '}';
     }
-    }
 }

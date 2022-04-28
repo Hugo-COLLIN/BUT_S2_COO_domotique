@@ -21,4 +21,9 @@ public class LampeAdaptateur implements Appareil
     {
         this.l.eteindre();
     }
+
+    public boolean isAllume()
+    {
+        return this.l.isAllume();
+    }
 }

@@ -12,5 +12,13 @@ public class LampeAdaptateur implements Appareil
 
 
     //Methods
+    public void allumer()
+    {
+        this.l.allumer();
+    }
 
+    public void eteindre()
+    {
+        this.l.eteindre();
+    }
 }

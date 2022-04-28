@@ -4,62 +4,45 @@ import java.util.List;
 public class Telecommande
 {
     //Attributes
-    List<Lampe> lampes;
-    List<Hifi> hifis;
+    List<Appareil> devices;
 
     //Constructor
     public Telecommande()
     {
-        this.lampes = new ArrayList<Lampe>();
+        this.devices = new ArrayList<Appareil>();
     }
 
     //Methods
-    public void ajouter(Lampe lampe){
-        this.lampes.add(lampe);
+    public void ajouter(Appareil appareil){
+        this.devices.add(appareil);
     }
 
-    public void ajouter(Hifi hifi) { this.hifis.add(hifi);}
+    public void activerLampe(int indexAppareil){
+        this.devices.get(indexAppareil).allumer();
+    }
 
-    public void activerLampe(int indexLampe){
-        this.lampes.get(indexLampe).allumer();
-    }
-    public void activerHifi(int indexHifi){
-        this.hifis.get(indexHifi).allumer();
-    }
 
     public void desactiverLampe(int indexLampe){
-        this.lampes.get(indexLampe).eteindre();
+        this.devices.get(indexLampe).eteindre();
     }
 
-    public void desactiverHifi(int indexHifi){
-        this.hifis.get(indexHifi).eteindre();
-    }
+
     public void activerTout()
     {
-        for(Lampe lampe : this.lampes)
-            lampe.allumer();
-        for(Hifi hifi : this.hifis)
-            hifi.allumer();
+        for(Appareil device : this.devices)
+            device.allumer();
     }
 
     public String toString(){
         StringBuilder msg = new StringBuilder();
 
-        if (this.lampes.size() > 0)
+        if (this.devices.size() > 0)
         {
-            for (Lampe device : this.lampes)
+            for (Appareil device : this.devices)
                 msg.append(device.toString()).append("\n");
         }
         else
-            msg = new StringBuilder("La telecommande n'est reliee a aucune lampe.");
-
-        if (this.hifis.size() > 0)
-        {
-            for (Hifi device : this.hifis)
-                msg.append(device.toString()).append("\n");
-        }
-        else
-            msg = new StringBuilder("La telecommande n'est reliee a aucune chaine hifi.");
+            msg = new StringBuilder("La telecommande n'est reliee a aucun appareil.");
 
         return msg.toString();
     }

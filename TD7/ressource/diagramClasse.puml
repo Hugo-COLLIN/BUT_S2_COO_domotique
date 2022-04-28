@@ -57,16 +57,18 @@ class TVAdaptateur{
     + eteindre()
     + toString() : String
 }
+Telecommande -right-> "*" Appareil : - devices
 
-Appareil <|.. LampeAdaptateur
-Appareil <|.. HifiAdaptateur
-Appareil <|.. TVAdaptateur
-
-LampeAdaptateur --> "1" Lampe :  - lampe
-HifiAdaptateur --> "1" Hifi : - hifi
-TVAdaptateur --> "1" Television : - television
+LampeAdaptateur .up.|> Appareil
+HifiAdaptateur .up.|> Appareil
+TVAdaptateur .up.|> Appareil
 
 
-Telecommande --> "*" Appareil : - devices
+LampeAdaptateur -down-> "1" Lampe :  - lampe
+HifiAdaptateur -down-> "1" Hifi : - hifi
+TVAdaptateur -down-> "1" Television : - television
+
+
+
 
 @enduml

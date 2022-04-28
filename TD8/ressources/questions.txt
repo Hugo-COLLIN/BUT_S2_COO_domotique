@@ -1,0 +1,9 @@
+Q1. On crée un adaptateur pour la classe Cheminee. Cet adaptateur contient 1 attribut du type Cheminee et
+ implémente l'interface Appareil.
+    La classe Telecommande contient une liste d'objets de type Appareil. Chaque objet de la liste est donc une
+instance de l'interface Appareil. Ainsi, il n'est pas nécessaire de modifier la télécommande pour opérer des
+changements sur les méthodes ; il suffit de modifier l'interface Appareil .
+
+Lorsqu'on souhaite ajouter un nouveau type d'appareil, on crée la classe adaptateur correspondante et on
+l'implémente à l'interface Appareil. Ainsi, toute les classes adaptateurs correspondant à un type d'objet
+qui implémentent Appareil, peuvent être des types d'objets contrôlés par la télécommande.

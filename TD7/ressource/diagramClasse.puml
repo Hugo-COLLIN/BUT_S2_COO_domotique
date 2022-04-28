@@ -33,11 +33,23 @@ class Television {
     + toString() : String
 }
 
-class Object{
+interface Appareil{
 }
-Lampe <|-- Object
-Hifi <|-- Object
-Television <|-- Object
-Telecommande <|-- Object 
-Object "*" <-- Telecommande : -devices
+
+class LampeAdaptateur{
+}
+
+class HifiAdaptateur{}
+
+Appareil <|.. LampeAdaptateur
+Appareil <|.. HifiAdaptateur
+Appareil <|.. TVAdaptateur
+
+LampeAdaptateur --> "1" Lampe :  - lampe
+HifiAdaptateur --> "1" Hifi : - hifi
+TVAdaptateur --> "1" Television : - television
+
+
+Telecommande --> "*" Appareil : - devices
+
 @enduml

@@ -19,7 +19,7 @@ class Hifi {
 
 class Telecommande {
     + Telecommande()
-    + ajouter(Object)
+    + ajouter(Appareil)
     + activer(int)
     + desactiver(int)
     + activerTout()
@@ -37,9 +37,22 @@ interface Appareil{
 }
 
 class LampeAdaptateur{
+    + allumer()
+    + eteindre()
+    + toString() : String
 }
 
-class HifiAdaptateur{}
+class HifiAdaptateur{
+    + allumer()
+    + eteindre()
+    + toString() : String
+}
+
+class TVAdaptateur{
+    + allumer()
+    + eteindre()
+    + toString() : String
+}
 
 Appareil <|.. LampeAdaptateur
 Appareil <|.. HifiAdaptateur

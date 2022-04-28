@@ -17,8 +17,18 @@ Telecommande pour la rectifier dans le cas où l'on change le nom
 des méthodes activer et désactiver on va devoir modifier Telecommande pour
 que ça corresponde aux nouveaux noms.
 
-3.1. Une télécommande possèdes des hifis, lampes et televisions, elle peut les allumer ou les éteindres.
+3.1. Une télécommande possèdes des hifis, lampes et televisions, elle peut les allumer ou les éteindre.
 
 3.2. cd ressources/diag3_2.png
 
-3.4. On crée dans Telecommande une liste contenant des éléments de type Object.
+3.4. On crée un adaptateur pour chaque type d'objet. Cet adaptateur contient 1 attribut du type qu'il adapte.
+Tous les adaptateurs implémentent l'interface Appareil.
+    La classe Telecommande contient une liste d'objets de type Appareil. Chaque objet de la liste est donc une
+instance de l'interface Appareil. Ainsi, il n'est pas nécessaire de modifier la télécommande pour opérer des
+changements sur les méthodes ; il suffit de modifier l'interface Appareil .
+
+    Lorsqu'on souhaite ajouter un nouveau type d'appareil, on crée la classe adaptateur correspondante et on
+l'implémente à l'interface Appareil. Ainsi, toute les classes adaptateurs correspondant à un type d'objet
+qui implémentent Appareil, peuvent être des types d'objets contrôlés par la télécommande.
+
+3.5. 

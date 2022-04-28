@@ -1,5 +1,5 @@
 public class Television {
-    boolean allume;
+    private boolean allume;
 
     public Television(){
         this.allume = false;
@@ -11,6 +11,10 @@ public class Television {
 
     public void eteindre(){
         this.allume = false;
+    }
+
+    public boolean isAllumer(){
+        return this.allume;
     }
 
     @Override

@@ -1,4 +1,4 @@
-public class TVAdaptateur {
+public class TVAdaptateur implements Appareil {
     Television television;
 
     public TVAdaptateur(){
@@ -11,6 +11,10 @@ public class TVAdaptateur {
 
     public void eteindre(){
         this.television.eteindre();
+    }
+
+    public boolean isAllumer(){
+        return this.television.isAllumer();
     }
 
     @Override

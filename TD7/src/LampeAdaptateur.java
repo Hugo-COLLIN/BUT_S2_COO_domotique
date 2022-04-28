@@ -24,6 +24,6 @@ public class LampeAdaptateur implements Appareil
 
     public boolean isAllume()
     {
-        return this.l.isAllume();
+        return this.lampe.isAllume();
     }
 }

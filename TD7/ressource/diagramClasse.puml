@@ -36,7 +36,6 @@ class Television {
 interface Appareil{
     + allumer()
     + eteindre()
-    + isAllumer() : boolean
     + toString : String
 }
 
@@ -50,14 +49,12 @@ class LampeAdaptateur{
 class HifiAdaptateur{
     + allumer()
     + eteindre()
-    + isAllumer() : boolean
     + toString() : String
 }
 
 class TVAdaptateur{
     + allumer()
     + eteindre()
-    + isAllumer() : boolean
     + toString() : String
 }
 

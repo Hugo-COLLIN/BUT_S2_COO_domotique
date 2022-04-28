@@ -7,7 +7,9 @@ Nous avons ajouté 16 lignes.
 
 2.3. cf. ressources/diag2_3.png
 
-2.4. En cas de bug, on est obligé de modifier le code pour chaque liste d'objets. Si on veut modifier les indices des listes, il faut faire les modifications pour les méthodes de chaque type d'objet. Donc le code n'est pas facilement maintenable.
+2.4. En cas de bug, on est obligé de modifier le code pour chaque liste d'objets.
+Si on veut modifier les indices des listes, il faut faire les modifications pour
+les méthodes de chaque type d'objet. Donc le code n'est pas facilement maintenable.
 
 2.5. La classe Telecommande dépend des classes Lampe et Hifi.
 Si on modifie Lampe ou Hifi on va devoir revoir la classe
@@ -18,3 +20,5 @@ que ça corresponde aux nouveaux noms.
 3.1. Une télécommande possèdes des hifis, lampes et televisions, elle peut les allumer ou les éteindres.
 
 3.2. cd ressources/diag3_2.png
+
+3.4. On crée dans Telecommande une liste contenant des éléments de type Object.

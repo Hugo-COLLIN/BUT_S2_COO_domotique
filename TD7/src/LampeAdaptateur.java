@@ -1,25 +1,25 @@
 public class LampeAdaptateur implements Appareil
 {
     //Attributes
-    private Lampe l;
+    private Lampe lampe;
 
 
     //Constructor
     public LampeAdaptateur (String n)
     {
-        this.l = new Lampe(n);
+        this.lampe = new Lampe(n);
     }
 
 
     //Methods
     public void allumer()
     {
-        this.l.allumer();
+        this.lampe.allumer();
     }
 
     public void eteindre()
     {
-        this.l.eteindre();
+        this.lampe.eteindre();
     }
 
     public boolean isAllume()

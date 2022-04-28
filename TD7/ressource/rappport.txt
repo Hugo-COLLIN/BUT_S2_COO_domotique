@@ -15,6 +15,6 @@ Telecommande pour la rectifier dans le cas où l'on change le nom
 des méthodes activer et désactiver on va devoir modifier telecommande pour
 que ça correspond aux nouveaux noms.
 
-3.1.
+3.1. Une télécommande possèdes des hifis, lampes et televisions, elle peut les allumer ou les éteindres.
 
 3.2. cd ressources/diag3_2.png

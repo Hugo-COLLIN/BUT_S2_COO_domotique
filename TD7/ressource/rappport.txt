@@ -12,8 +12,8 @@ Nous avons ajouté 16 lignes.
 2.5. La classe Telecommande dépend des classes Lampe et Hifi.
 Si on modifie Lampe ou Hifi on va devoir revoir la classe
 Telecommande pour la rectifier dans le cas où l'on change le nom
-des méthodes activer et désactiver on va devoir modifier telecommande pour
-que ça correspond aux nouveaux noms.
+des méthodes activer et désactiver on va devoir modifier Telecommande pour
+que ça corresponde aux nouveaux noms.
 
 3.1. Une télécommande possèdes des hifis, lampes et televisions, elle peut les allumer ou les éteindres.
 

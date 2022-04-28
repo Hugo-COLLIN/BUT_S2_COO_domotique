@@ -1,6 +1,21 @@
 @startuml
 
-class Lampe {
+class Telecommande {
+    + Telecommande()
+    + ajouter(Appareil)
+    + activer(int)
+    + desactiver(int)
+    + activerTout()
+    + toString() : String
+}
+
+interface Appareil{
+    + allumer()
+    + eteindre()
+    + toString() : String
+}
+
+class Lampe{
     - nom : String
     - allume : boolean
     + Lampe(String)
@@ -17,23 +32,8 @@ class Hifi {
     + toString() : String
 }
 
-class Telecommande {
-    + Telecommande()
-    + ajouter(Appareil)
-    + activer(int)
-    + desactiver(int)
-    + activerTout()
-    + toString() : String
-}
-
 class Television {
     - allume : boolean
-    + allumer()
-    + eteindre()
-    + toString() : String
-}
-
-interface Appareil{
     + allumer()
     + eteindre()
     + toString() : String
@@ -59,14 +59,14 @@ class TVAdaptateur{
 }
 Telecommande -right-> "*" Appareil : - devices
 
-LampeAdaptateur .up.|> Appareil
+Appareil <|.. LampeAdaptateur
 HifiAdaptateur .up.|> Appareil
 TVAdaptateur .up.|> Appareil
 
 
-LampeAdaptateur -down-> "1" Lampe :  - lampe
-HifiAdaptateur -down-> "1" Hifi : - hifi
-TVAdaptateur -down-> "1" Television : - television
+LampeAdaptateur -up-> "1" Lampe :  - lampe
+HifiAdaptateur -up-> "1" Hifi : - hifi
+TVAdaptateur -up-> "1" Television : - television
 
 
 

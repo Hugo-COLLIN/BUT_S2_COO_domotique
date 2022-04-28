@@ -26,4 +26,12 @@ public class LampeAdaptateur implements Appareil
     {
         return this.lampe.isAllume();
     }
+
+    public String toString()
+    {
+        return "LampeAdaptateur{" +
+                "lampe=" + lampe +
+                '}';
+    }
+    }
 }

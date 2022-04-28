@@ -1,4 +1,5 @@
-public class HifiAdaptateur {
+public class HifiAdaptateur implements Appareil
+{
     Hifi hifi;
 
     public HifiAdaptateur(){

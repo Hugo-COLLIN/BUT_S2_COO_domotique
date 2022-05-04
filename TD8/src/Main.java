@@ -8,6 +8,8 @@ public class Main {
 		
 		LampeAdaptateur l1=new LampeAdaptateur("Lampe1");
 		t.ajouterAppareil(l1);
+		t.ajouterAppareil(new HifiAdaptateur());
+		t.ajouterAppareil(new ChemineeAdapter());
 		
 		/****** A COMPLETER ******/
 		// TODO

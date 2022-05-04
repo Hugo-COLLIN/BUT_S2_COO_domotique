@@ -18,7 +18,15 @@ public class ChemineeAdapter implements Appareil
 
     @Override
     public void eteindre() {
+        int nouvelleIntensite = this.c.getLumiere() -10;
+        this.c.changerIntensite(nouvelleIntensite);
+    }
 
+    @Override
+    public String toString() {
+        return "ChemineeAdapter{" +
+                "c=" + c +
+                '}';
     }
 
     //Methods

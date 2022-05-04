@@ -26,6 +26,10 @@ public class Telecommande
         this.devices.get(indexAppareil).eteindre();
     }
 
+    public int getNombre(){
+        return this.devices.size();
+    }
+
 
     public void activerTout()
     {

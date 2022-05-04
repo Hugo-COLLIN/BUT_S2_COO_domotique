@@ -23,7 +23,7 @@ public class ChemineeAdapter implements Appareil
     }
 
     public boolean isAllume(){
-        return c.intensite < 10;
+        return c.intensite >= 10;
     }
 
     @Override

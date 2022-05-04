@@ -227,7 +227,7 @@ class TelecommandeTest
         }
     }
 
-
+    @Test
     public void test_activer_cheminee ()
     {
         // Initialisation des valeurs
@@ -238,7 +238,22 @@ class TelecommandeTest
         t.activerAppareil(0);
 
         // Test si la valeur a bien ete changee
-        assertTrue(cA.isAllume(), "La lampe ne s'est pas allumee");
+        assertTrue(cA.isAllume(), "La cheminee ne s'est pas allumee");
+    }
+
+    @Test
+    public void test_desactiver_cheminee ()
+    {
+        // Initialisation des valeurs
+        ChemineeAdapter cA = new ChemineeAdapter();
+        t.ajouterAppareil(cA);
+        t.activerAppareil(0);
+
+        // Appel de la methode
+        t.desactiverAppareil(0);
+
+        // Test si la valeur a bien ete changee
+        assertFalse(cA.isAllume(), "La cheminee est allumee");
     }
 
 

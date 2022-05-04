@@ -254,7 +254,8 @@ class TelecommandeTest
         t.ajouterAppareil(new LampeAdaptateur("Lampe2"));
         t.activerAppareil(1);
         String res;
-        String expected = "Lampe1: Off\nLampe2: On\n";
+        //String expected = "Lampe1: Off\nLampe2: On\n";
+        String expected = "LampeAdaptateur{lampe=Lampe1: Off}\nLampeAdaptateur{lampe=Lampe2: On}\n";
 
         //Appel methode
         res = t.toString();

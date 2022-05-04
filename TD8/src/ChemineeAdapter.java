@@ -1,4 +1,4 @@
-public class ChemineeAdapter
+public class ChemineeAdapter implements Appareil
 {
     //Attribute
     Cheminee c;
@@ -10,5 +10,16 @@ public class ChemineeAdapter
         this.c = new Cheminee();
     }
 
+    @Override
+    public void allumer() {
+
+    }
+
+    @Override
+    public void eteindre() {
+
+    }
+
     //Methods
+
 }

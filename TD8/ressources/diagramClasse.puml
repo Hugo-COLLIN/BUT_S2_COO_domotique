@@ -19,6 +19,7 @@ class Hifi {
 
 class Television {
     - allume : boolean
+    + Television()
     + allumer()
     + eteindre()
     + toString() : String
@@ -26,8 +27,9 @@ class Television {
 
 class Cheminee {
     - intensite : int
-    + allumer()
-    + eteindre()
+    + Cheminee()
+    + changerIntensite(int)
+    + getLumiere() : int
     + toString() : String
 }
 
@@ -50,7 +52,7 @@ class TVAdaptateur{
     + toString() : String
 }
 
-class ChemineeAdaptater{
+class ChemineeAdaptateur{
     + allumer()
     + eteindre()
     + toString() : String

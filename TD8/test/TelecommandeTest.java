@@ -227,6 +227,21 @@ class TelecommandeTest
         }
     }
 
+
+    public void test_activer_cheminee ()
+    {
+        // Initialisation des valeurs
+        ChemineeAdapter cA = new ChemineeAdapter();
+        t.ajouterAppareil(cA);
+
+        // Appel de la methode
+        t.activerAppareil(0);
+
+        // Test si la valeur a bien ete changee
+        assertTrue(cA.isAllume(), "La lampe ne s'est pas allumee");
+    }
+
+
     /**
      * Test que la methode toString
      * renvoie bien la chaine attendue

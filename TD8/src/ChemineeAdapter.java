@@ -22,6 +22,10 @@ public class ChemineeAdapter implements Appareil
         this.c.changerIntensite(nouvelleIntensite);
     }
 
+    public boolean isAllume(){
+        return c.intensite < 10;
+    }
+
     @Override
     public String toString() {
         return "ChemineeAdapter{" +

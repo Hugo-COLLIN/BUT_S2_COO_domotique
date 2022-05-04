@@ -1,0 +1,95 @@
+[33mcommit c75f8bc64a9c77cd558990bb86925f190393a5c7[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;33mtag: v1.0[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Hugo COLLIN <hugo.collin1@outlook.fr>
+Date:   Wed Apr 20 12:56:29 2022 +0200
+
+    commentaire inutile enleve
+
+[1mdiff --git a/Domotique/test/TelecommandeTest.java b/Domotique/test/TelecommandeTest.java[m
+[1mindex ef805b1..40d8ff6 100644[m
+[1m--- a/Domotique/test/TelecommandeTest.java[m
+[1m+++ b/Domotique/test/TelecommandeTest.java[m
+[36m@@ -6,7 +6,8 @@[m [mimport java.util.List;[m
+ [m
+ import static org.junit.jupiter.api.Assertions.*;[m
+ [m
+[31m-class TelecommandeTest {[m
+[32m+[m[32mclass TelecommandeTest[m
+[32m+[m[32m{[m
+ [m
+     //Atributes[m
+     Telecommande telecommande;[m
+[36m@@ -19,14 +20,6 @@[m [mclass TelecommandeTest {[m
+         telecommande = new Telecommande();[m
+     }[m
+ [m
+[31m-    /*[m
+[31m-    @Test[m
+[31m-    void test_Telecommande_constructeurVide()[m
+[31m-    {[m
+[31m-        assertNull(telecommande.lampes, "doit etre null");[m
+[31m-    }[m
+[31m-     */[m
+[31m-[m
+     /**[m
+      * Teste l'ajout d'une lampe a une[m
+      * telecommande vide[m
+[36m@@ -41,7 +34,6 @@[m [mclass TelecommandeTest {[m
+         {[m
+             assertTrue(l.equals(l1), "doit etre vrai");[m
+         }[m
+[31m-        [m
+     }[m
+ [m
+     /**[m
+[36m@@ -72,7 +64,8 @@[m [mclass TelecommandeTest {[m
+      * de la liste[m
+      */[m
+     @Test[m
+[31m-    void test_activerLampe_pos0() {[m
+[32m+[m[32m    void test_activerLampe_pos0()[m
+[32m+[m[32m    {[m
+         // Initialisation des valeurs[m
+         Telecommande t = new Telecommande();[m
+         Lampe p = new Lampe("LampeTest");[m
+[36m@@ -91,7 +84,8 @@[m [mclass TelecommandeTest {[m
+      * de la liste[m
+      */[m
+     @Test[m
+[31m-    void test_activerLampe_pos1() {[m
+[32m+[m[32m    void test_activerLampe_pos1()[m
+[32m+[m[32m    {[m
+         // Initialisation des valeurs[m
+         Telecommande t = new Telecommande();[m
+         Lampe p = new Lampe("LampeTest");[m
+[36m@@ -135,24 +129,20 @@[m [mclass TelecommandeTest {[m
+             // Verifie que l'exception a remonté le message attendu[m
+             assertTrue(res.equals("Index 2 out of bounds for length 2") , "doit sortir une exception de dépassement");[m
+         }[m
+[31m-[m
+[31m-[m
+[31m-        /*[m
+[31m-        // Test si la valeur a bien ete changer[m
+[31m-        assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");[m
+[31m-[m
+[31m-         */[m
+     }[m
+ [m
+     @Test[m
+[31m-    void test_desactiverLampe() {[m
+[32m+[m[32m    void test_desactiverLampe()[m
+[32m+[m[32m    {[m
+     }[m
+ [m
+     @Test[m
+[31m-    void test_activerTout() {[m
+[32m+[m[32m    void test_activerTout()[m
+[32m+[m[32m    {[m
+     }[m
+ [m
+     @Test[m
+[31m-    void test_testToString() {[m
+[32m+[m[32m    void test_testToString()[m
+[32m+[m[32m    {[m
+     }[m
+ }[m
+\ No newline at end of file[m

@@ -17,15 +17,6 @@ class Hifi {
     + toString() : String
 }
 
-class Telecommande {
-    + Telecommande()
-    + ajouter(Appareil)
-    + activer(int)
-    + desactiver(int)
-    + activerTout()
-    + toString() : String
-}
-
 class Television {
     - allume : boolean
     + allumer()
@@ -33,7 +24,8 @@ class Television {
     + toString() : String
 }
 
-interface Appareil{
+class Cheminee {
+    - intensite : int
     + allumer()
     + eteindre()
     + toString() : String
@@ -58,13 +50,38 @@ class TVAdaptateur{
     + toString() : String
 }
 
+class ChemineeAdaptater{
+    + allumer()
+    + eteindre()
+    + toString() : String
+}
+
+
+
+interface Appareil{
+    + allumer()
+    + eteindre()
+    + toString() : String
+}
+
+class Telecommande {
+    + Telecommande()
+    + ajouter(Appareil)
+    + activer(int)
+    + desactiver(int)
+    + activerTout()
+    + toString() : String
+}
+
 Appareil <|.. LampeAdaptateur
 Appareil <|.. HifiAdaptateur
 Appareil <|.. TVAdaptateur
+Appareil <|.. ChemineeAdaptateur
 
 LampeAdaptateur --> "1" Lampe :  - lampe
 HifiAdaptateur --> "1" Hifi : - hifi
 TVAdaptateur --> "1" Television : - television
+ChemineeAdaptateur --> "1" Cheminee : - cheminee
 
 
 Telecommande --> "*" Appareil : - devices

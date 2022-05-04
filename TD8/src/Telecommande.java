@@ -13,16 +13,16 @@ public class Telecommande
     }
 
     //Methods
-    public void ajouter(Appareil appareil){
+    public void ajouterAppareil(Appareil appareil){
         this.devices.add(appareil);
     }
 
-    public void activer(int indexAppareil){
+    public void activerAppareil(int indexAppareil){
         this.devices.get(indexAppareil).allumer();
     }
 
 
-    public void desactiveR(int indexAppareil){
+    public void desactiverAppareil(int indexAppareil){
         this.devices.get(indexAppareil).eteindre();
     }
 

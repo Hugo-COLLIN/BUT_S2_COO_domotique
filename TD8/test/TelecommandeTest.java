@@ -10,7 +10,7 @@ class TelecommandeTest
 {
     //Atributes
     private Telecommande t;
-    private Lampe p;
+    private LampeAdaptateur p;
 
 
     //Methods
@@ -28,10 +28,10 @@ class TelecommandeTest
     @Test
     public void test_ajouter_telecVide ()
     {
-        p = new Lampe("Cuisine");
-        t.ajouter(p);
+        p = new LampeAdaptateur("Cuisine");
+        t.ajouterAppareil(p);
 
-        for (Lampe l : t.lampes)
+        for (Appareil l : t.devices)
         {
             assertEquals(l, p, "doit etre vrai");
         }
@@ -45,15 +45,15 @@ class TelecommandeTest
     public void test_ajouter_telec1Elem ()
     {
         //Initialisation
-        List<Lampe> lTest = new ArrayList<Lampe>();
-        lTest.add(new Lampe("Cuisine"));
-        lTest.add(new Lampe("Salon"));
+        List<LampeAdaptateur> lTest = new ArrayList<LampeAdaptateur>();
+        lTest.add(new LampeAdaptateur("Cuisine"));
+        lTest.add(new LampeAdaptateur("Salon"));
         
         //Ajout lampe et test
         for (int i = 0 ; i < lTest.size() ; i ++)
         {
-            t.ajouter(lTest.get(i));
-            assertEquals(t.lampes.get(i), lTest.get(i));
+            t.ajouterAppareil(lTest.get(i));
+            assertEquals(t.devices.get(i), lTest.get(i));
         }
     }
 
@@ -68,11 +68,11 @@ class TelecommandeTest
     public void test_activer_pos0 ()
     {
         // Initialisation des valeurs
-        p = new Lampe("LampeTest");
-        t.ajouter(p);
+        p = new LampeAdaptateur("LampeTest");
+        t.ajouterAppareil(p);
 
         // Appel de la methode
-        t.activer(0);
+        t.activerAppareil(0);
 
         // Test si la valeur a bien ete changee
         assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");
@@ -87,12 +87,12 @@ class TelecommandeTest
     public void test_activer_pos1 ()
     {
         // Initialisation des valeurs
-        p = new Lampe("LampeTest");
-        t.ajouter(new Lampe("LampeUseless"));
-        t.ajouter(p);
+        p = new LampeAdaptateur("LampeTest");
+        t.ajouterAppareil(new LampeAdaptateur("LampeUseless"));
+        t.ajouterAppareil(p);
 
         // Appel de la methode
-        t.activer(1);
+        t.activerAppareil(1);
 
         // Test si la valeur a bien ete changee
         assertTrue(p.isAllume(), "La lampe ne s'est pas allumee");
@@ -108,14 +108,14 @@ class TelecommandeTest
     {
         // Initialisation des valeurs
         String res = "";
-        p = new Lampe("LampeTest");
-        t.ajouter(new Lampe("LampeUseless"));
-        t.ajouter(p);
+        p = new LampeAdaptateur("LampeTest");
+        t.ajouterAppareil(new LampeAdaptateur("LampeUseless"));
+        t.ajouterAppareil(p);
 
         try
         {
             // Appel de la methode
-            t.activer(2);
+            t.activerAppareil(2);
         }
         catch (IndexOutOfBoundsException e)
         {
@@ -139,12 +139,12 @@ class TelecommandeTest
     public void test_desactiver_pos0 ()
     {
         // Initialisation des valeurs
-        p = new Lampe("LampeTest");
-        t.ajouter(p);
-        t.activer(0);
+        p = new LampeAdaptateur("LampeTest");
+        t.ajouterAppareil(p);
+        t.activerAppareil(0);
 
         // Appel de la methode
-        t.desactiveR(0);
+        t.desactiverAppareil(0);
 
         // Test si la valeur a bien ete changee
         assertFalse(p.isAllume(), "La lampe n'est pas eteinte'");
@@ -159,13 +159,13 @@ class TelecommandeTest
     public void test_desactiver_pos1 ()
     {
         // Initialisation des valeurs
-        p = new Lampe("LampeTest");
-        t.ajouter(new Lampe("LampeUseless"));
-        t.ajouter(p);
-        t.activer(1);
+        p = new LampeAdaptateur("LampeTest");
+        t.ajouterAppareil(new LampeAdaptateur("LampeUseless"));
+        t.ajouterAppareil(p);
+        t.activerAppareil(1);
 
         // Appel de la methode
-        t.desactiveR(1);
+        t.desactiverAppareil(1);
 
         // Test si la valeur a bien ete changee
         assertFalse(p.isAllume(), "La lampe ne s'est pas eteinte");
@@ -181,14 +181,14 @@ class TelecommandeTest
     {
         // Initialisation des valeurs
         String res = "";
-        p = new Lampe("LampeTest");
-        t.ajouter(new Lampe("LampeUseless"));
-        t.ajouter(p);
+        p = new LampeAdaptateur("LampeTest");
+        t.ajouterAppareil(new LampeAdaptateur("LampeUseless"));
+        t.ajouterAppareil(p);
 
         try
         {
             // Appel de la methode
-            t.desactiveR(2);
+            t.desactiverAppareil(2);
         }
         catch (IndexOutOfBoundsException e)
         {
@@ -213,16 +213,17 @@ class TelecommandeTest
     public void test_activerTout_pasVide ()
     {
         // Initialisation des valeurs
-        t.ajouter(new Lampe("Lampe1"));
-        t.ajouter(new Lampe("Lampe2"));
+        t.ajouterAppareil(new LampeAdaptateur("Lampe1"));
+        t.ajouterAppareil(new LampeAdaptateur("Lampe2"));
 
         // Appel de la methode
         t.activerTout();
 
         // Test si la valeur a bien ete changee
-        for (Lampe l : t.lampes)
+        for (Appareil l : t.devices)
         {
-            assertTrue(l.isAllume(), "La lampe ne s'est pas allumee");
+            if (l instanceof LampeAdaptateur)
+                assertTrue( ((LampeAdaptateur) l).isAllume(), "La lampe ne s'est pas allumee");
         }
     }
 
@@ -234,9 +235,9 @@ class TelecommandeTest
     public void test_toString_ok ()
     {
         // Initialisation des valeurs
-        t.ajouter(new Lampe("Lampe1"));
-        t.ajouter(new Lampe("Lampe2"));
-        t.activer(1);
+        t.ajouterAppareil(new LampeAdaptateur("Lampe1"));
+        t.ajouterAppareil(new LampeAdaptateur("Lampe2"));
+        t.activerAppareil(1);
         String res;
         String expected = "Lampe1: Off\nLampe2: On\n";
 

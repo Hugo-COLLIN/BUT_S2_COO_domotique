@@ -17,13 +17,13 @@ public class Telecommande
         this.devices.add(appareil);
     }
 
-    public void activerLampe(int indexAppareil){
+    public void activer(int indexAppareil){
         this.devices.get(indexAppareil).allumer();
     }
 
 
-    public void desactiverLampe(int indexLampe){
-        this.devices.get(indexLampe).eteindre();
+    public void desactiveR(int indexAppareil){
+        this.devices.get(indexAppareil).eteindre();
     }
 
 

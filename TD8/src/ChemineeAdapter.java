@@ -12,7 +12,8 @@ public class ChemineeAdapter implements Appareil
 
     @Override
     public void allumer() {
-
+        int nouvelleIntensite = this.c.getLumiere() +10;
+        this.c.changerIntensite(nouvelleIntensite);
     }
 
     @Override

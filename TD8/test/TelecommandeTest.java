@@ -231,7 +231,7 @@ class TelecommandeTest
     public void test_activer_cheminee ()
     {
         // Initialisation des valeurs
-        ChemineeAdapter cA = new ChemineeAdapter();
+        ChemineeAdaptateur cA = new ChemineeAdaptateur();
         t.ajouterAppareil(cA);
 
         // Appel de la methode
@@ -245,7 +245,7 @@ class TelecommandeTest
     public void test_desactiver_cheminee ()
     {
         // Initialisation des valeurs
-        ChemineeAdapter cA = new ChemineeAdapter();
+        ChemineeAdaptateur cA = new ChemineeAdaptateur();
         t.ajouterAppareil(cA);
         t.activerAppareil(0);
 

@@ -7,7 +7,7 @@ public class Main {
 
 		t.ajouterAppareil(new LampeAdaptateur("Lampe1"));
 		t.ajouterAppareil(new HifiAdaptateur());
-		t.ajouterAppareil(new ChemineeAdapter());
+		t.ajouterAppareil(new ChemineeAdaptateur());
 		t.ajouterAppareil(new TVAdaptateur());
 
 		TelecommandeGraphique tg=new TelecommandeGraphique(t);

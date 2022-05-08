@@ -1,11 +1,11 @@
-public class ChemineeAdapter implements Appareil
+public class ChemineeAdaptateur implements Appareil
 {
     //Attribute
     Cheminee c;
 
 
     //Constructor
-    public ChemineeAdapter ()
+    public ChemineeAdaptateur()
     {
         this.c = new Cheminee();
     }
